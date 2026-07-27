@@ -2,14 +2,12 @@
 using namespace std;
 int main()
 {
-int l,b,A,P;
-cout<<"Enter the l=";
-cin>>l;
-cout<<"Enter the b=";
-cin>>b;
-A=l*b;
-P=2*(l+b);
-cout<<"Area of reactangle="<<A<<endl;
-cout<<"parameter of reactangle="<<P<<endl;
+int R,A,C;
+cout<<"Enter the R=";
+cin>>R;
+A=3.14*R*R;
+C=2*3.14*R;
+cout<<"Area of circle="<<A<<endl;
+cout<<"circumfurence of circle="<<C<<endl;
     return 0;
 }
