@@ -2,18 +2,14 @@
 using namespace std;
 int main()
 {
-int a,b;
-
-cout<<"enter the first number=";
-cin>>a;
-
-cout<<"enter the second number=";
+int l,b,A,P;
+cout<<"Enter the l=";
+cin>>l;
+cout<<"Enter the b=";
 cin>>b;
-
-cout<<"Addition="<<a+b<<endl;
-cout<<"Multiplication="<<a*b<<endl;
-cout<<"Subtraction="<<a-b<<endl;
-cout<<"Division="<<a/b<<endl;
-cout<<"Modulus="<<a%b<<endl;
+A=l*b;
+P=2*(l+b);
+cout<<"Area of reactangle="<<A<<endl;
+cout<<"parameter of reactangle="<<P<<endl;
     return 0;
 }
