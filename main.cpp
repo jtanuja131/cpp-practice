@@ -3,11 +3,11 @@ using namespace std;
 int main()
 {
 int a=10;
-int b=20;
+int b=40;
 cout<<"before the swaping="<<"a="<<a<<"b="<<b<<endl;
-temp=a;
-a=b;
-b=temp;
+a=a+b;
+b=a-b;
+a=a-b;
 cout<<"after the swaping="<<"a="<<a<<"b="<<b<<endl;
     return 0;
 }
