@@ -2,12 +2,10 @@
 using namespace std;
 int main()
 {
-int a=10;
-int b=40;
-cout<<"before the swaping="<<"a="<<a<<"b="<<b<<endl;
-a=a+b;
-b=a-b;
-a=a-b;
-cout<<"after the swaping="<<"a="<<a<<"b="<<b<<endl;
-    return 0;
+int n,sum=0;
+cout<<"Enter a number=";
+cin>>n;
+for(int i=1;i<=n;i++)
+sum=sum+i;
+cout<<"Sum of first="<<n<<"natural numbers="<<sum<<endl;
 }
