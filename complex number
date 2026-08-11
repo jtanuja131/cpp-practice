@@ -1,0 +1,36 @@
+//complex number
+ #include<iostream>
+ using namespace std;
+class Complex{
+ float real,imaginary;
+public:
+  void getData()
+  {
+    cout<<"Enter real part"<<endl;
+    cin>>real;
+    cout<<"Enter imaginary part"<<endl;
+    cin>>imaginary;
+  }
+void addition(Complex c)
+{
+    cout<<"Addition="<<real+c.real<<"+"<<imaginary + c.imaginary<<"i"<<endl;
+}
+void substract(Complex c)
+{
+    cout<<"substraction="<<real-c.real<<"-"<<imaginary - c.imaginary<<"i"<<endl;
+}
+};
+int main()
+{
+    Complex c1,c2;
+    cout<<"Enter first complex number:\n"<<endl;
+    c1.getData();
+    cout<<"Enter second complex number:\n"<<endl;
+    c2.getData();
+    c1.addition(c2);
+    c1.substract(c2);
+    return 0;   
+}
+ 
+
+ 
