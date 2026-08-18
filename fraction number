@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+class Fraction
+{
+    int num1, den1, num2, den2;
+    int addNum, addDen;
+    int subNum, subDen;
+
+public:
+    void getData()
+    {
+    cout << "Enter numerator of first fraction: ";
+    cin >> num1;
+    cout << "Enter denominator of first fraction: ";
+    cin >> den1;
+    cout << "Enter numerator of second fraction: ";
+    cin >> num2;
+    cout << "Enter denominator of second fraction: ";
+    cin >> den2;
+    }
+
+    void addition()
+    {
+    addNum = (num1 * den2) + (num2 * den1);
+    addDen = den1 * den2;
+
+    cout << "Addition = " << addNum << "/" << addDen << endl;
+    }
+
+    void subtraction()
+    {
+    subNum = (num1 * den2) - (num2 * den1);
+    subDen = den1 * den2;
+
+    cout << "Subtraction = " << subNum << "/" << subDen << endl;
+    }
+};
+
+int main()
+{
+    Fraction f;
+
+    f.getData();
+    f.addition();
+    f.subtraction();
+
+    return 0;
+}
