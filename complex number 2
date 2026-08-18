@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int real1, imag1, real2, imag2;
+    int addReal, addImag, subReal, subImag;
+
+    cout << "Enter real and imaginary part of first complex number: ";
+    cin >> real1 >> imag1;
+
+    cout << "Enter real and imaginary part of second complex number: ";
+    cin >> real2 >> imag2;
+
+    // Addition
+    addReal = real1 + real2;
+    addImag = imag1 + imag2;
+
+    // Subtraction
+    subReal = real1 - real2;
+    subImag = imag1 - imag2;
+
+    cout << "\nAddition = " << addReal << " + " << addImag << "i";
+    cout << "\nSubtraction = " << subReal << " + " << subImag << "i";
+
+    return 0;
+}
