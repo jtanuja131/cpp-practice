@@ -1,0 +1,76 @@
+//Reactangle class
+#include <iostream>
+using namespace std;
+
+class Rectangle
+{
+    float length, breadth;
+
+public:
+
+    // Default Constructor
+    Rectangle()
+    {
+        length = 0;
+        breadth = 0;
+    }
+
+    // Parameterized Constructor
+    Rectangle(float l, float b)
+    {
+        length = l;
+        breadth = b;
+    }
+
+    // Copy Constructor
+    Rectangle(Rectangle &r)
+    {
+        length = r.length;
+        breadth = r.breadth;
+    }
+
+    void area()
+    {
+        cout << "Area = " << length * breadth << endl;
+    }
+};
+
+int main()
+{
+    float l, b;
+
+    Rectangle r1;
+
+    cout << "Default Constructor:" << endl;
+    r1.area();
+
+    cout << "\nEnter length: ";
+    cin >> l;
+
+    cout << "Enter breadth: ";
+    cin >> b;
+
+    Rectangle r2(l, b);
+
+    cout << "\nParameterized Constructor:" << endl;
+    r2.area();
+
+    Rectangle r3(r2);
+
+    cout << "\nCopy Constructor:" << endl;
+    r3.area();
+
+    return 0;
+}
+//output
+Default Constructor:
+Area = 0
+
+Enter length: 24
+Enter breadth: 15
+
+Parameterized Constructor:
+Area = 360
+
+Copy Constructor:
+Area = 360
