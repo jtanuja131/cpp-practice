@@ -1,0 +1,92 @@
+//Employee class
+#include <iostream>
+using namespace std;
+class Employee
+{
+    int empID;
+    string empName;
+    float empSalary;
+public:
+
+// Default Constructor
+    Employee()
+    {
+        empID = 0;
+        empName = "Unknown";
+        empSalary = 0;
+    }
+
+// Parameterized Constructor
+    Employee(int id, string name, float salary)
+    {
+        empID = id;
+        empName = name;
+        empSalary = salary;
+    }
+
+// Copy Constructor
+    Employee(Employee &e)
+    {
+        empID = e.empID;
+        empName = e.empName;
+        empSalary = e.empSalary;
+    }
+    void display()
+    {
+        cout << "Employee ID = " << empID << endl;
+        cout << "Employee Name = " << empName << endl;
+        cout << "Employee Salary = " << empSalary << endl;
+    }
+};
+
+int main()
+{
+    int id;
+    string name;
+    float salary;
+
+// Default Constructor
+    Employee e1;
+    cout << "Default Constructor:" << endl;
+    e1.display();
+
+    cout << "\nEnter Employee ID: ";
+    cin >> id;
+
+    cout << "Enter Employee Name: ";
+    cin >> name;
+
+    cout << "Enter Employee Salary: ";
+    cin >> salary;
+
+// Parameterized Constructor
+    Employee e2(id, name, salary);
+    cout << "\nParameterized Constructor:" << endl;
+    e2.display();
+
+// Copy Constructor
+    Employee e3(e2);
+    cout << "\nCopy Constructor:" << endl;
+    e3.display();
+
+    return 0;
+}
+//Output
+Default Constructor:
+Employee ID = 0
+Employee Name = Unknown
+Employee Salary = 0
+
+Enter Employee ID: 1001
+Enter Employee Name: Samay
+Enter Employee Salary: 45000
+
+Parameterized Constructor:
+Employee ID = 1001
+Employee Name = Samay
+Employee Salary = 45000
+
+Copy Constructor:
+Employee ID = 1001
+Employee Name = Samay
+Employee Salary = 45000
