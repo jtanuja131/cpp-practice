@@ -1,0 +1,101 @@
+//product
+#include <iostream>
+using namespace std;
+class Product
+{
+    int prodID;
+    string prodName;
+    float price;
+    int quantity;
+public:
+    Product()
+    {
+        prodID = 0;
+        prodName = "Unknown";
+        price = 0;
+        quantity = 0;
+    }
+    Product(int id, string name, float p, int q)
+    {
+        prodID = id;
+        prodName = name;
+        price = p;
+        quantity = q;
+    }
+    Product(Product &p)
+    {
+        prodID = p.prodID;
+        prodName = p.prodName;
+        price = p.price;
+        quantity = p.quantity;
+    }
+    void display()
+    {
+        cout << "Product ID = " << prodID << endl;
+        cout << "Product Name = " << prodName << endl;
+        cout << "Price = " << price << endl;
+        cout << "Quantity = " << quantity << endl;
+        cout << "Total Price = " << price * quantity << endl;
+    }
+};
+int main()
+{
+    int id, q;
+    string name;
+    float price;
+
+    Product p1;
+
+    cout << "Default Constructor:" << endl;
+    p1.display();
+
+    cout << "\nEnter Product ID: ";
+    cin >> id;
+
+    cout << "Enter Product Name: ";
+    cin >> name;
+
+    cout << "Enter Price: ";
+    cin >> price;
+
+    cout << "Enter Quantity: ";
+    cin >> q;
+
+    Product p2(id, name, price, q);
+
+    cout << "\nParameterized Constructor:" << endl;
+    p2.display();
+
+    Product p3(p2);
+
+    cout << "\nCopy Constructor:" << endl;
+    p3.display();
+
+    return 0;
+}
+//output
+Default Constructor:
+Product ID = 0
+Product Name = Unknown
+Price = 0
+Quantity = 0
+Total Price = 0
+
+Enter Product ID: 8
+Enter Product Name: Laptop
+Enter Price: 35000
+Enter Quantity: 7
+
+Parameterized Constructor:
+Product ID = 8
+Product Name = Laptop
+Price = 35000
+Quantity = 7
+Total Price = 245000
+
+Copy Constructor:
+Product ID = 8
+Product Name = Laptop
+Price = 35000
+Quantity = 7
+Total Price = 245000
