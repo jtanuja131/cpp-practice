@@ -1,0 +1,142 @@
+//Hierarchical Inheritance
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+protected:
+    string name, className;
+    int rollNo;
+
+public:
+    void getStudent()
+    {
+        cout << "Enter Student Name: ";
+        cin >> name;
+
+        cout << "Enter Roll No: ";
+        cin >> rollNo;
+
+        cout << "Enter Class: ";
+        cin >> className;
+    }
+};
+
+class Academic : public Student
+{
+private:
+    float m1, m2, m3, m4, m5;
+    float total, percentage;
+
+public:
+    void getAcademic()
+    {
+        cout << "Enter marks of 5 subjects: ";
+        cin >> m1 >> m2 >> m3 >> m4 >> m5;
+
+        total = m1 + m2 + m3 + m4 + m5;
+        percentage = total / 5;
+    }
+
+    void displayAcademic()
+    {
+        cout << "\n========== ACADEMIC DETAILS ==========\n";
+        cout << "Name       : " << name << endl;
+        cout << "Roll No    : " << rollNo << endl;
+        cout << "Class      : " << className << endl;
+        cout << "Subject 1  : " << m1 << endl;
+        cout << "Subject 2  : " << m2 << endl;
+        cout << "Subject 3  : " << m3 << endl;
+        cout << "Subject 4  : " << m4 << endl;
+        cout << "Subject 5  : " << m5 << endl;
+        cout << "Total      : " << total << "/500" << endl;
+        cout << "Percentage : " << percentage << "%" << endl;
+    }
+};
+
+class Sports : public Student
+{
+private:
+    string sportName;
+    int sportsMarks;
+
+public:
+    void getSports()
+    {
+        cout << "Enter Sport Name: ";
+        cin >> sportName;
+
+        cout << "Enter Sports Marks: ";
+        cin >> sportsMarks;
+    }
+
+    void displaySports()
+    {
+        cout << "\n========== SPORTS DETAILS ==========\n";
+        cout << "Name         : " << name << endl;
+        cout << "Roll No      : " << rollNo << endl;
+        cout << "Class        : " << className << endl;
+        cout << "Sport Name   : " << sportName << endl;
+        cout << "Sports Marks : " << sportsMarks << endl;
+    }
+};
+
+int main()
+{
+    Academic a;
+    Sports s;
+
+    // Input first
+    cout << "----- ACADEMIC INFORMATION -----\n";
+    a.getStudent();
+    a.getAcademic();
+
+    cout << "\n----- SPORTS INFORMATION -----\n";
+    s.getStudent();
+    s.getSports();
+
+    // Print everything at the end
+    cout << "\n\n******** FINAL OUTPUT ********\n";
+
+    a.displayAcademic();
+    s.displaySports();
+
+    return 0;
+}
+
+//output
+----- ACADEMIC INFORMATION -----
+Enter Student Name: Tanuja
+Enter Roll No: 93
+Enter Class: SY
+Enter marks of 5 subjects: 89 78 86 75 65
+
+----- SPORTS INFORMATION -----
+Enter Student Name: Samay
+Enter Roll No: 41
+Enter Class: SY
+Enter Sport Name: Taekwondo
+Enter Sports Marks: 79
+
+
+******** FINAL OUTPUT ********
+
+========== ACADEMIC DETAILS ==========
+Name       : Tanuja
+Roll No    : 93
+Class      : SY
+Subject 1  : 89
+Subject 2  : 78
+Subject 3  : 86
+Subject 4  : 75
+Subject 5  : 65
+Total      : 393/500
+Percentage : 78.6%
+
+========== SPORTS DETAILS ==========
+Name         : Samay
+Roll No      : 41
+Class        : SY
+Sport Name   : Taekwondo
+Sports Marks : 79
