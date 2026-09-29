@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+class Number
+{
+    int n;
+
+public:
+    Number(int x)
+    {
+        n = x;
+    }
+
+    void operator--()
+    {
+        --n;
+    }
+
+    void display()
+    {
+        cout << "Value = " << n;
+    }
+};
+
+int main()
+{
+    int x;
+
+    cout << "Enter a number: ";
+    cin >> x;
+
+    Number obj(x);
+
+    cout << "Before --: ";
+    obj.display();
+
+    --obj;
+
+    cout << "\nAfter --: ";
+    obj.display();
+
+    return 0;
+}
+//output
+Enter a number: 8
+Before --: Value = 8
+After --: Value = 7
